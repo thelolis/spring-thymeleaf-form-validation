@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Belajar Spring Boot dan Thymeleaf</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h3>Belajar Spring Boot dan Thymeleaf</h3>
+	<h4>Isikan Judul dan Isi Berita</h4>
+	<form action="#" th:action="@{/}" th:object="${berita}" method="post">
+		<table>
+			<tr>
+				<td>Judul:</td>
+				<td><input type="text" th:field="*{judul}"></input></td>
+				<td th:if="${#fields.hasErrors('judul')}" th:errors="*{judul}">Pesan
+					error pada judul berita</td>
+			</tr>
+			<tr>
+				<td>Isi Berita</td>
+				<td><input type="text" th:field="*{berita}"></input></td>
+				<td th:if="${#fields.hasErrors('berita')}" th:errors="*{berita}"></td>
+			</tr>
+			<tr>
+				<td><button type="submit">Kirim Berita</button></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

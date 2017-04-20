@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Hasil Input Berita</title>
+</head>
+<body>
+	<h3>Hasil Input Berita</h3>
+	<h4>Judul:</h4>
+	<p th:text="${judul}"></p>
+	<h4>Isi Berita:</h4>
+	<p th:text="${berita}"></p>
+	<h4>Tanggal Isi:</h4>
+	<p th:text="${#dates.format(tanggal, 'dd-MMM-yyyy')}"></p>
+</body>
+</html>
